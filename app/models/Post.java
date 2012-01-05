@@ -42,4 +42,12 @@ public class Post extends Model {
 		return this;
 	}//end method
 	
+    public Post previous(){
+    	return Post.find("postedAt < ? order by postedAt desc",postedAt).first();
+    }//end method
+    
+    public Post next(){
+    	return Post.find("postedAt < ? order by postedAt asc",postedAt).first();
+    }//end method
+		
 }//end klazz
