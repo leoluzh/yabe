@@ -49,3 +49,11 @@
         
     </div>
 #{/if}
+#{elseif _post.tags}
+	<span class="post-tags">
+		- Tagged 
+		#{list items:_post.tags, as:'tag'}
+			<a href="@{Application.listTagged(tag.name)}">${tag}</a>${tag_isLast?'':', '}
+		#{/list}
+	</span>
+#{/elseif}
