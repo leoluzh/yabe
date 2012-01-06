@@ -21,10 +21,14 @@ GET     /captcha                                Application.captcha
 
 #Import CRUD routes
 *      /admin									module:crud
+#Administrator
+GET    /admin/?                                 Admin.index
+GET    /admin/myPosts/{id}                      Admin.form
+GET    /admin/new                               Admin.form
+POST   /admin/myPosts/{id}                      Admin.save
+POST   /admin/new                               Admin.save
 
 #Import Secure routes
 
 *      /										module:secure
 
-#Administrator
-GET    /admin/?                                 Admin.index
